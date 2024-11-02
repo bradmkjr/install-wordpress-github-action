@@ -173,7 +173,7 @@ runs:
         }}' core download \
           --path='${{ inputs.installation_path }}' \
           --version='${{ inputs.wordpress_version }}' \
-          --skip-content
+          # --skip-content
 
     - name: Configure WordPress
       shell: bash
