@@ -38,6 +38,10 @@ inputs:
     description: WordPress Installation path
     required: false
     default: ${{ runner.temp }}/wordpress
+  installation_host:
+    description: WordPress Installation host
+    required: false
+    default: localhost   
   github_token:
     description: GitHub token
     required: true
@@ -189,8 +193,8 @@ runs:
           || steps.wp_cli.outputs.path
         }}' core install \
             --path=${{ inputs.installation_path }} \
-            --url=localhost \
-            --title=WordPress \
+            --url=${{ inputs.installation_host }} \
+            --title=${{ inputs.wordpress_title }} \
             --admin_user='${{ github.actor }}' \
             --admin_email='${{ github.actor }}@github.com' \
             --skip-email \
