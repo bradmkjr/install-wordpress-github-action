@@ -102,6 +102,10 @@ runs:
       shell: bash
       run: sudo /etc/init.d/mysql start
 
+    - name: Start Apache
+      shell: bash
+      run: sudo /etc/init.d/apache2 start
+
     - name: Create the Database
       shell: bash
       id: db
