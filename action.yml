@@ -171,6 +171,7 @@ runs:
       if: ${{ ! inputs.wp_cli_path }}
       with:
         version: '${{ inputs.wp_cli_version }}'
+        verify: false
 
     - name: Download WordPress
       shell: bash
