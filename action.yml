@@ -166,7 +166,7 @@ runs:
         fail-fast: true
         GITHUB_TOKEN: ${{ inputs.github_token }}
 
-    - uses: holyhope/install-wp-cli-github-action@v1.0.0
+    - uses: bradmkjr/install-wp-cli-github-action@v1.0.0
       id: wp_cli
       if: ${{ ! inputs.wp_cli_path }}
       with:
