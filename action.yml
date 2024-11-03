@@ -11,6 +11,12 @@ inputs:
       Accepts a version number, 'latest' or 'nightly'.
     required: false
     default: latest
+  wp_cli_version:
+    description: >-
+      Select which version you want to download.
+      Accepts a version number, 'latest' or 'nightly'.
+    required: false
+    default: latest
   wordpress_title:
     description: The title of the new site.
     required: false
@@ -163,6 +169,8 @@ runs:
     - uses: holyhope/install-wp-cli-github-action@v1.0.0
       id: wp_cli
       if: ${{ ! inputs.wp_cli_path }}
+      with:
+        version: '${{ inputs.wp_cli_version }}'
 
     - name: Download WordPress
       shell: bash
